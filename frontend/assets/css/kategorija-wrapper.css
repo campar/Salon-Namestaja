@@ -1,0 +1,40 @@
+.kategorija-container{
+	position:absolute;
+	display:grid;
+	grid-template-columns: repeat(3, calc(1100px/3));
+	grid-auto-rows: 290px;
+	background:#f5f6fa;
+	justify-items: center;
+	padding-top:20px;
+	width:100%;
+	height:100%;
+}
+.kategorija{
+	width:350px;
+	height:232px;
+}
+
+.kategorija .img {
+	height:100%;
+	width:100%;
+	border:1px solid #47b851;
+	border-bottom:none;
+}
+
+.kategorija .img img{ 
+	/* border-top-right-radius:20px;
+	border-top-left-radius:5px; */
+	height:100%;
+	width:100%;
+}
+
+.kategorija_bottom{
+	color: #fff;
+	background: #292b2c;
+	height:50px;
+	border-bottom-left-radius:15px;
+	border-bottom-right-radius:15px;
+	border:1px solid #47b851;
+	border-top:none;
+
+}

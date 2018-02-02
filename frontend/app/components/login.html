@@ -1,0 +1,23 @@
+<div class="card card-outline-secondary" ng-controller="LoginKorisnikaController">
+    <div class="card-header">
+        <h3 class="mb-0">Login</h3>
+    </div>
+    <div class="card-block">
+        <form name="form" class="form" role="form">
+            <div class="form-group">
+                <label for="uname1">Korisnicko Ime</label>
+                <input ng-model="list.korisnicko_ime" type="text" class="form-control" name="uname1" ng-required="true">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input ng-model="list.lozinka" type="password" class="form-control" ng-required="true">
+            </div>
+            <div class=" small">
+                <span>Nemas nalog, brzo obavi <a href="#!/registracija">registraciju</a></span>
+            </div>
+            <button ng-click="submit()" type="button" class="btn btn-success btn-lg float-right">Login</button>
+        </form>
+    </div>
+    <!--/card-block-->
+</div>
+<!-- /form card login -->

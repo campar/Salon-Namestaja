@@ -1,0 +1,40 @@
+<div class="kategorija-container" ng-controller="KategorijeController">
+	<div class="loader" ng-show="loading"></div>
+	<div class="kategorija" ng-repeat="kategorija in kategorije.data" ng-show="kategorija.slika">
+		<div class="img">
+			<img ng-src="http://localhost:5000/img/{{kategorija.slika}}">
+		</div>
+		<div class="kategorija_bottom">
+			{{kategorija.opis}}
+		</div>
+	</div>
+
+
+
+
+	<div class="kategorija">
+		<div class="img">
+			<img src="https://www.salonnamestajaiva.com/skin/frontend/default/theme205k/images/banner1.jpg">
+		</div>
+		<div class="kategorija_bottom">
+			a
+		</div>
+	</div>
+
+	<div class="kategorija">
+		<div class="img">
+			<img src="https://www.salonnamestajaiva.com/skin/frontend/default/theme205k/images/banner1.jpg">
+		</div>
+		<div class="kategorija_bottom">
+			a
+		</div>
+	</div>
+	<div class="kategorija">
+		<div class="img">
+			<img src="https://www.salonnamestajaiva.com/skin/frontend/default/theme205k/images/banner1.jpg">
+		</div>
+		<div class="kategorija_bottom">
+			a
+		</div>
+	</div>
+</div>

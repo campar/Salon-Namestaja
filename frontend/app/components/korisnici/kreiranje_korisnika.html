@@ -1,0 +1,52 @@
+<div ng-controller="KreirajKorisnikaController">
+    <div class="alert alert-success stanje" role="alert" ng-if="uspesno">{{uspesno}}</div>
+    <div class="card card-outline-secondary" >
+        <div class="card-header">
+            <h3 class="mb-0">Registracija</h3>
+        </div>
+        <div class="card-block">
+            <form name="form" class="form" role="form" autocomplete="off" novalidate>
+            
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Ime</label>
+                    <div class="col-lg-9">
+                        <input ng-model="list.ime" class="form-control" type="text" ng-required="true">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Prezime</label>
+                    <div class="col-lg-9">
+                        <input  ng-model="list.prezime" class="form-control" type="text" ng-required="true">
+                    </div>
+                </div>
+               
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Korisnicko Ime</label>
+                    
+                    <div class="col-lg-9">
+                        <input ng-change="proveri()" name="username" ng-model="list.korisnicko_ime" class="form-control" type="text" ng-required="true" ng-minlength="4" ng-maxlength="20">
+
+                        <p ng-show="form.username.$error.minlength && form.username.$touched">Korisnicko ime mora biti vece od 4 karaktera</p>
+                        <p ng-show="form.username.$error.maxlength && form.username.$touched">
+                        Korisnicko ime mora biti manje od 20 karaktera</p>
+                        <p ng-show="postoji">Korisnicko ime vec postoji</p>
+{{postoji}}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Lozinka</label>
+                    <div class="col-lg-9">
+                        <input ng-model="list.lozinka" class="form-control" type="password" ng-required="true">
+                    </div>
+                </div>
+    
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label"></label>
+                    <div class="col-lg-9">
+                        <input ng-click="submit(form.$valid)" type="button" class="btn btn-primary" value="Kreiraj Nalog">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
