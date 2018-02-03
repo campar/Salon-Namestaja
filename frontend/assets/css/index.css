@@ -29,3 +29,8 @@ body, html{
 input.ng-invalid.ng-touched{
 	border:2px solid red;
 }
+
+input[disabled="disabled"]{
+	opacity:0.4;
+	cursor: not-allowed
+}

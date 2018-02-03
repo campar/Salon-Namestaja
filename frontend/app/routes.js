@@ -1,4 +1,6 @@
-var app = angular.module("myApp", ["ngRoute", 'korisnikService', 'proizvodService','kategorijeService']);
+var app = angular.module("myApp", 
+    ['ngRoute','korisnikController','proizvodService','kategorijeService']
+);
 
 app.config(function($routeProvider,$locationProvider) {
     $locationProvider.html5Mode({
@@ -6,41 +8,34 @@ app.config(function($routeProvider,$locationProvider) {
  });
     $routeProvider
     .when("/", {
-        templateUrl : "app/pocetna.html",
-        // controller:"PocetnaController"
-    })
-    .when("/kategorije", {
-        templateUrl : "app/components/kategorije/prikazivanje_kategorija.html",
-        controller:"KategorijeController"
+        templateUrl : "app/components/pocetna.html",
     })
     .when("/kreiraj/kategoriju", {
         templateUrl : "app/components/kategorije/kreiranje_kategorije.html",
-        controller:"KreirajKategorijuController"
     })
     .when("/proizvodi", {
         templateUrl : "app/components/proizvodi/prikazivanje_svih_proizvoda.html",
-        controller:"SviProizvodiController"
     })
     .when("/kreiraj/proizvod", {
         templateUrl : "app/components/proizvodi/kreiranje_proizvoda.html",
-        // controller:"KreirajProizvodController"
     })
     .when("/proizvod/:id", {
         templateUrl : "app/components/proizvodi/prikazivanje_pojedinacnog_proizvod.html",
-        // controller:"PojedinacanProizvodController"
+    })
+    .when("/kategorije", {
+        templateUrl : "app/components/kategorije/prikazivanje_kategorija.html",
     })
     .when("/registracija", {
         templateUrl : "app/components/korisnici/kreiranje_korisnika.html",
-        controller:"KreirajKorisnikaController"
-        
     })
     .when("/korisnici", {
         templateUrl : "app/components/korisnici/prikazivanje_svih_korisnika.html",
-        // controller:"KorisnikController"
     })
     .when("/login", {
         templateUrl : "app/components/login.html",
-        // controller:"LoginKorisnikaController"
+    })
+    .when("/admin", {
+        templateUrl : "app/components/admin.html",
     })
     .when("/404", {
         templateUrl : "app/components/404.html",

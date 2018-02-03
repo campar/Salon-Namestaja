@@ -26,7 +26,7 @@
                     <small class="form-text text-muted">Ako niste odabrali sliku, kategorija se nece prikazati na stranici "/kategorije"</small>
                 </div>  
                 <div class="col-lg-6">
-                    <input ng-click="submit()" type="button" class="btn btn-primary" value="Dodaj Kategoriju">
+                    <button ng-click="submit(form.$valid)" ng-disabled="form.$invalid" type="button" class="btn btn-primary btn-lg float-right">Dodaj Kategoriju</button>
                 </div>
             </div>
         </form>
