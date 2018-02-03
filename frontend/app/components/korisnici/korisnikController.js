@@ -60,7 +60,20 @@ app.controller("LoginKorisnikaController", function ($scope, $http, $window, $lo
     };
 });
 
-app.controller("LoginController", function ($scope, $window, LogovanService) {
+app.controller("LoginController", function ($scope, $window,$location, LogovanService) {
+    $scope.pocetnaa = false
+
+    $scope.pocetna = () =>{
+        if($location.$$url == "/proizvodi"){
+             return $scope.pocetnaa = true
+         }
+        else{
+            return $scope.pocetnaa = false
+        }
+           
+    }
+    
+    
     $scope.logovan = () => {
         return !!LogovanService.getToken()
     }
