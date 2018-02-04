@@ -1,8 +1,26 @@
 <div ng-controller="SviProizvodiController">
-	<div class="loader" ng-show="loading"></div>
-	<p ng-repeat="proizvod in proizvodi.data">
+	<!-- <div class="loader" ng-show="loading"></div> -->
+	<!-- <p ng-repeat="proizvod in proizvodi.data">
             {{proizvod}}
-    </p>
-
-    
+    </p> -->
+<div class="sortiranje">
+	<div class="btn-group dropright sortiranje">
+		<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sortiraj po:</button>
+		<div class="dropdown-menu">
+			<h6 class="dropdown-header">Ceni</h6>
+			<a class="dropdown-item" href="" ng-click="reverse(false)">Rastuce</a>
+			<a class="dropdown-item" href="" ng-click="reverse(true)">Opadajuce</a>
+		</div>
+	</div>
+</div>
+    <div class="proizvod-container">
+    	<div class="proizvod" ng-repeat="proizvod in proizvodi.data | orderBy : 'cena' : sortByCena">
+	    	<div class="slika">
+	    		<img src="http://trilord.rs/wp-content/uploads/2017/03/t1stolica.png" alt="">
+	    	</div>
+	    	<h3></h3><p><i class="a">{{proizvod['kategorija.naziv']}}</i></p>
+	    	<p>Cena:{{proizvod.cena}}din</p>
+	    	<a href="#!/proizvodi/{{proizvod.id}}">Detaljnije</a>
+    	</div>
+    </div>	
 </div>

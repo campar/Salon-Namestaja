@@ -1,0 +1,19 @@
+<div class="pojedinacniProizvod-wrapper" ng-controller="PojedinacniProizvodiController">
+	<div class="pojedinacniProizvod">
+		<div class="pojedinacnaSlika">
+			<img src="http://trilord.rs/wp-content/uploads/2017/03/t1stolica.png" alt="">
+
+		</div>
+			<div class="detalj-proizvoda">
+				<h2>{{proizvod.data.naziv}}</h2>
+				<div class="opis-proizvoda">{{proizvod.data.opis}}</div>
+		</div>
+		<div class="kolicina">
+			Na stanju: {{proizvod.data.kolicina}}
+		</div>
+		<div class="cena">
+			Cena: {{proizvod.data.cena}}
+		</div>
+	</div>
+	<div class="loader" ng-show="loading"></div>
+</div>

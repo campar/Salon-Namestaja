@@ -2,8 +2,7 @@
 	position:absolute;
 	display:grid;
 	grid-template-columns: repeat(3, calc(1100px/3));
-	grid-auto-rows: 290px;
-	background:#f5f6fa;
+	grid-auto-rows: 400px;
 	justify-items: center;
 	padding-top:20px;
 	width:100%;

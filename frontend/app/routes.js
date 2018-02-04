@@ -16,11 +16,11 @@ app.config(function($routeProvider,$locationProvider) {
     .when("/proizvodi", {
         templateUrl : "app/components/proizvodi/prikazivanje_svih_proizvoda.html",
     })
+    .when("/proizvodi/:id", {
+        templateUrl : "app/components/proizvodi/prikazivanje_pojedinacnog_proizvoda.html",
+    })
     .when("/kreiraj/proizvod", {
         templateUrl : "app/components/proizvodi/kreiranje_proizvoda.html",
-    })
-    .when("/proizvod/:id", {
-        templateUrl : "app/components/proizvodi/prikazivanje_pojedinacnog_proizvod.html",
     })
     .when("/kategorije", {
         templateUrl : "app/components/kategorije/prikazivanje_kategorija.html",
