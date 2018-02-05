@@ -14,7 +14,7 @@
 
     <script src="app/components/korisnici/korisnikService.js"></script>
     <script src="app/components/korisnici/korisnikController.js"></script>
-    <script src="app/components/proizvodi/proizvodService.js"></script>
+
      <script src="app/components/proizvodi/proizvodController.js"></script>
     <script src="app/components/kategorije/kategorijeService.js"></script>
     <script src="app/components/kategorije/kategorijeService.js"></script>
@@ -36,11 +36,8 @@
             <a class="navbar-brand" href="#">Pocetna</a>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                  
-                  
                   <li class="nav-item">
                     <a class="nav-link" href="#!/proizvodi">Naš Nameštaj</a>   
-
                   </li>
                   <li class="nav-item" >
                     <a class="nav-link" ng-show="!logovan()" href="#!/login">LogIn</a>    
@@ -50,10 +47,7 @@
                     <a class="nav-link" ng-if="admin()" href="#!/admin">Admin Panel</a>            
                   </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0" ng-if="pocetna()">
-                  <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
+
               </div>
             </nav>
             </div>

@@ -2,7 +2,9 @@ var app = angular.module("myApp",
     ['ngRoute','korisnikController','proizvodService','kategorijeService']
 );
 
-app.config(function($routeProvider,$locationProvider) {
+app.config(function($routeProvider,$locationProvider,$httpProvider) {
+    $httpProvider.interceptors.push('JWTInjector');
+
     $locationProvider.html5Mode({
     // enabled:true,
  });
@@ -36,6 +38,9 @@ app.config(function($routeProvider,$locationProvider) {
     })
     .when("/admin", {
         templateUrl : "app/components/admin.html",
+    })
+    .when("/kategorije/:id/proizvodi", {
+        templateUrl : "app/components/proizvodi/prikazivanje_kategorija_proizvoda.html",
     })
     .when("/404", {
         templateUrl : "app/components/404.html",

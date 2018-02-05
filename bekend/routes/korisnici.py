@@ -2,7 +2,7 @@ from bekend import app,mysql,jsonify,request, make_response
 import jwt
 from datetime import datetime, timedelta
 from werkzeug.security import generate_password_hash, check_password_hash
-
+from functools import wraps
 from bekend.config import zatrazi_token
 
 @app.route("/korisnici")
@@ -43,14 +43,14 @@ def izmeni_korisnika(korisnik_id):
     db.commit()
     return jsonify({"status":True}),200
 
-@app.route("/korisnici/<int:korisnik_id>", methods=["DELETE"])
-def obrisi_korisnika(korisnik_id):
+@app.route("/proizvodi/<int:proizvod_id>", methods=["DELETE"])
+def obrisi_korisnika(proizvod_id):
     cursor = mysql.get_db().cursor()
     db = mysql.get_db()
-    cursor.execute('''DELETE FROM korisnik
-                      WHERE id=%s''',(korisnik_id))
+    cursor.execute('''DELETE FROM proizvod
+                      WHERE id=%s''',(proizvod_id))
     db.commit()
-    return jsonify({"status":True}),202
+    return jsonify({"status":True}),204
 
 @app.route("/login", methods=['POST'])
 def login():

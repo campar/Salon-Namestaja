@@ -13,10 +13,9 @@ app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = ''
 app.config['MYSQL_DATABASE_DB'] = 'flaskbaza'
 
-
+ 
 #JWT SECRET 
 app.config['SECRET_KEY'] = 'tokensifra'
-
 
 
 def zatrazi_token(f):
@@ -35,34 +34,4 @@ def zatrazi_token(f):
             return jsonify({'message' : 'Token invalid!'}), 401
         return f(*args, **kwargs)
     return wrapper
-
-#ideja za ADMINA, je da se napravi dekorator nad dekoratorom koji ce proveravati da li je TRENUTNI current_user admin
-
-
-
-
-# from flask.ext.uploads import UploadSet, configure_uploads, IMAGES
-
-
-# photos = UploadSet('photos', IMAGES)
-
-# app.config['UPLOADED_PHOTOS_DEST'] = 'static/img'
-# configure_uploads(app, photos)
-
-
-# @app.route('/upload', methods=['GET', 'POST'])
-# def uploadd():
-#     if 'file' in request.files:
-#         filename = photos.save(request.files['file'])
-#         return filename
-#     return '''
-#     <!doctype html>
-#     <title>Upload new File</title>
-#     <h1>Upload new File</h1>
-#     <form action="" method=post enctype=multipart/form-data>
-#       <p><input type=file name=file>
-#          <input type=submit value=Upload>
-#     </form>
-#     '''
-
     

@@ -9,22 +9,28 @@ app.controller('KategorijeController', ['$scope', '$http', function($scope,$http
     });
 }]);
 
-app.controller("KreirajKategorijuController", function ($scope, $http) {
+app.controller("KreirajKategorijuController", function ($scope, $http, $location) {
     
     $scope.list = {};
 
     $scope.submit = function () {
         console.log($scope.list);
-        
+        var fd = new FormData();
+        fd.append('naziv', $scope.list.naziv);
+        fd.append('opis', $scope.list.opis);
+        fd.append('slika', $scope.list.slika);
 
          $http({
-		    url:"http://localhost:5000/kategorije",
-		    method:"POST",
-		    data:"$scope.list",
-		    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-    	})
+            url:"http://localhost:5000/kategorije",
+            method:"post",
+            data:fd,
+            headers:{
+                'Content-Type': undefined
+            }
+        })
         .then(function (data, status, headers, config) {
-            // $scope.vesti = data;
+            console.log($scope.list)
+            $location.path("/");
         })
     };
 });

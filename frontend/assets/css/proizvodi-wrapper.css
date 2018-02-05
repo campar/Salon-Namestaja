@@ -47,6 +47,8 @@
 	width:100px;
 	height:50px;
 	cursor: pointer;
+	text-align:center;
+	padding-top:9px;
 }
 
 
@@ -66,4 +68,34 @@
 .sortiranje{
 	margin-top:5px;
 	left:50px;
+	margin-bottom:5px;
+}
+
+
+
+.proizvod button{
+	position:absolute;
+	bottom:0;
+	right:0;
+	background:#c0392b;
+	color:#fff;
+	border:none;
+	border-radius:5px;
+	width:100px;
+	height:50px;
+	cursor: pointer;
+}
+
+
+.proizvod button:hover{
+	background: #f1c40f;
+	color:#000;
+}
+
+.proizvod button:focus {outline:0;}
+
+.proizvod button:active{
+	background: #c0392b;
+	color:#fff; 
+	/* border: 2px solid blue; */
 }

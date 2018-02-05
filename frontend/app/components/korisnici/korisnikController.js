@@ -9,7 +9,7 @@ app.controller('KorisnikController', ['$scope', '$http', function($scope,$http) 
     });
 }]);//napravite da se prikazuju ali samo pojedinacni korisnici
 
-app.controller("KreirajKorisnikaController", function ($scope, $http) {
+app.controller("KreirajKorisnikaController", function ($scope, $http,$location) {
     $scope.list = {};
 
     $http.get("http://localhost:5000/korisnici")
@@ -30,7 +30,9 @@ app.controller("KreirajKorisnikaController", function ($scope, $http) {
                 url:"http://localhost:5000/korisnici",
                 method:"post",
                 data:$scope.list,
-            });
+            }).then(function (data, status, headers, config){
+                $location.path("/login");
+            })
         }
     }
 });
@@ -61,19 +63,6 @@ app.controller("LoginKorisnikaController", function ($scope, $http, $window, $lo
 });
 
 app.controller("LoginController", function ($scope, $window,$location, LogovanService) {
-    $scope.pocetnaa = false
-
-    $scope.pocetna = () =>{
-        if($location.$$url == "/proizvodi"){
-             return $scope.pocetnaa = true
-         }
-        else{
-            return $scope.pocetnaa = false
-        }
-           
-    }
-    
-    
     $scope.logovan = () => {
         return !!LogovanService.getToken()
     }

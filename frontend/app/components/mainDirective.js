@@ -13,3 +13,15 @@ app.directive('fileModel', ['$parse', function($parse){
 		}
 	}
 }]);
+
+app.factory('JWTInjector', function (LogovanService) {  
+	return {
+		request: (config) => {
+			if (LogovanService.getToken()) {
+				config['headers']['x-access-token'] = LogovanService.getToken()
+			}
+			
+			return config;
+		}
+	}
+})

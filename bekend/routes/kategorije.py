@@ -6,10 +6,7 @@ def get_kategorije():
     cursor.execute("SELECT * FROM kategorija")
     
     return jsonify(data = cursor.fetchall())
-
-
-
-
+    
 @app.route("/kategorije/<int:kategorija_id>/proizvodi", methods=["GET"])
 def get_proizvodii(kategorija_id):
     cursor = mysql.get_db().cursor()

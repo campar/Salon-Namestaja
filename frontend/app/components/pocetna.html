@@ -1,24 +1,26 @@
-<!-- 	<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+	<div class="karosel">
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="http://www.dalasnamestaj.com/wp-content/uploads/2014/08/51-1.jpg" alt="First slide">
+      <img class="d-block w-100" src="http://www.dalasnamestaj.com/wp-content/uploads/2014/08/51-1.jpg">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="http://www.bravacasa.rs/wp-content/uploads/2013/06/Stolice-za-ljuljanje.jpg" alt="Second slide">
+      <img class="d-block w-100" src="http://www.bravacasa.rs/wp-content/uploads/2013/06/Stolice-za-ljuljanje.jpg">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="..." alt="Third slide">
+      <img class="d-block w-200" src="https://i1.wp.com/candresses.com/wp-content/uploads/2016/08/Modern-dining-table-with-chairs-for-Your-Home-Remodeling.jpg?fit=3411%2C2020&ssl=1" >
     </div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+  <a href="" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+  <a href="" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div> -->
+</div>
+</div>
 <div class="kategorija-container" ng-controller="KategorijeController">
 	<div class="loader" ng-show="loading"></div>
 
@@ -27,7 +29,8 @@
 			<img ng-src="http://localhost:5000/img/{{kategorija.slika}}">
 		</div>
 		<div class="kategorija_bottom">
-			{{kategorija.opis}}
+		      <a href="#!/kategorije/{{kategorija.id}}/proizvodi">{{kategorija.naziv}}</a>
 		</div>
+
 	</div>
 </div>

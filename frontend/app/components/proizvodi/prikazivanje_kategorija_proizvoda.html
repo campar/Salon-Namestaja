@@ -1,0 +1,18 @@
+<div ng-controller="KategorijaProizvodController">
+	<div class="loader" ng-show="loading"></div>
+	
+
+	    <div class="proizvod-container">
+	    	<div class="proizvod" ng-repeat="proizvod in proizvodi.data ">
+	    		
+	    		<h4>{{proizvod['proizvod.naziv']}}</h4>
+		    	<div class="slika">
+		    		<!-- {{proizvod}} -->
+		    		<img ng-src="http://localhost:5000/img/{{proizvod['proizvod.slika']}}" alt="">
+		    	</div>
+		    	<i>{{proizvod.naziv}}</i>
+		    	<p>Cena:{{proizvod.cena}}din</p>
+		    	<a href="#!/proizvodi/{{proizvod['proizvod.id']}}">Detaljnije</a>
+	    	</div>
+	    </div>	
+</div>

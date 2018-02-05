@@ -8,7 +8,6 @@
 .pojedinacnaSlika{
 	display:inline-block;
 	width:300px;
-	border:2px solid black;
 	
 }
 
@@ -29,11 +28,5 @@
 .kategorija{
 	position:relative;
 	height:100%;
-	
-}
-
-
-.kolicina{
-	
 	
 }
